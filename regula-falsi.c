@@ -28,6 +28,8 @@ int main() {
     }
 
     do {
+         printf("%f\t\t%f\t\t", a, b);
+
         float denominator = func(b) - func(a);
 
         if (fabs(denominator) < ERROR) {
@@ -36,6 +38,7 @@ int main() {
         }
 
         root = (a * func(b) -  b * func(a)) / denominator;
+         printf("%f\t\t", root);
 
         if (func(root) > 0) {
             b = root;
@@ -44,6 +47,8 @@ int main() {
         }
 
         err = fabs((b - a) / fabs(b));
+         printf("%f\n", err);
+        
     } while (err > ERROR);
 
     printf("The root is %f\n", root);

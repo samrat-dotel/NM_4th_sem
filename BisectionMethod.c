@@ -25,7 +25,7 @@ int main(){
         printf("%f\t\t%f\t\t", guess1, guess2);
 
         random = (guess1 + guess2)/2;
-        printf("%f\n", random);
+        printf("%f\t\t", random);
 
         if (function(guess2) * function(random) < 0 ){
             guess1 = random;
@@ -35,5 +35,8 @@ int main(){
         }
 
         err = fabs((guess2 - guess1) / guess2);
+        printf("%f\n", err);
     }while(err > ERROR);
+
+    printf("\nHence, the root is %f.", random);
 }
